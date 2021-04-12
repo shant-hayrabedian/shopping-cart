@@ -1,0 +1,52 @@
+.card {
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; 
+    flex-direction: row;
+  }
+
+  .IconColor1 {
+    margin-left: 246px;
+    margin-bottom: -43px;
+    color: grey;
+    height: 10%;
+    width: 25px;
+    cursor: pointer;
+  }
+
+  .colorStyling {
+    margin-right: 200px;
+    margin-top: -32px;
+  }
+
+  .dropdownStyling {
+    margin-right: 120px;
+    margin-top: -20px;
+  }
+  .btn-light {
+    color: #212529;
+    background-color: #fff;
+    border-color: #f8f9fa;
+    margin-left: 5px;
+}
+
+.priceStyling {
+  margin-left: 225px;
+  font-size: 17px;
+}
+
+.itemImages {
+  width: 16%;
+  margin-left: 45px;
+  margin-top: 6px; 
+}
+
+.itemName {
+  margin-bottom: 50px;
+  margin-right: 150px;
+}
+.form-control {
+  width: 32%;
+  margin-left: 45px;
+}

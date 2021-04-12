@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import CartHeader from './components/CartHeader/CartHeader';
+import CartFooter from './components/CartFooter/CartFooter';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
+import CartItemList from './components/CartItemList/CartItemList';
 
 function App() {
+  const [items, setItems] = useState([
+    {
+      id: Math.random(),
+      price: 1399,
+      image: '/assets/blender1.jpg',
+      quantity: 1,
+      name: 'Blender 1',
+      color: 'Red'
+    },
+    {
+      id: Math.random(),
+      price: 2399,
+      image: '/assets/blender2.jpg',
+      quantity: 1,
+      name: 'Blender 2',
+      color: 'Blue'
+    }
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CartHeader />
+      <CartItemList
+        items= {items}
+        onDelete = {(item) => {
+          setItems(items.filter((i) => i.id !== item.id));
+        }}
+        />
+      <CartFooter items= {items}/>
     </div>
   );
 }

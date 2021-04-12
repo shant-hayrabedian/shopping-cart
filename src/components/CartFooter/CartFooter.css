@@ -1,0 +1,17 @@
+.CartFooterButton {
+    width: 25%;
+    margin-top: 25px;
+}
+
+.subTotalStyling {
+    margin-right: 285px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 35px;
+}
+.subTotalPriceStyling {
+    margin-top: -53px;
+    margin-left: 350px;
+    font-size: 23px;
+    font-weight: 500;
+}
