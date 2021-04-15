@@ -10,7 +10,7 @@ function CartItem({item, onDelete}) {
                 <Card.Img src={item.image} className="itemImages"/>
                 <Card.Body>
                     <RiDeleteBin7Fill className="IconColor1" onClick={() => {
-                        onDelete(item);
+                        onDelete(item.id);
                     }}/>
                     <Card.Title className="itemName">{item.name}</Card.Title>
 
