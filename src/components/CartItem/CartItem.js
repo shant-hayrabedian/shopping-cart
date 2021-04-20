@@ -1,9 +1,25 @@
 import './CartItem.css';
 import Card from 'react-bootstrap/Card';
 import {RiDeleteBin7Fill} from 'react-icons/ri';
-import Form from 'react-bootstrap/Form';
+import CartQuantity from "../CartQuantity/CartQuantity";
 
-function CartItem({item, onDelete}) {
+function CartItem({item, onDelete, onSelection}) {
+    // const [state, setState] = useState([]);
+    // onChange = (index, val) => {
+    //     setState({
+    //         products: state.products.map((product, i) => (
+    //             i === index ? {...product, count: val} : product
+    //         ))
+    //     })
+    // }
+    // function converted() {
+    //
+    // }
+    const convertedPrice = Number(item.price.split('$').join(''))
+    let total = 0;
+    total += item.quantity * convertedPrice
+    // return total.toFixed(2);
+
     return (
         <div>
             <Card style={{width: '30rem', border: '0px', display: 'flex'}}>
@@ -15,18 +31,8 @@ function CartItem({item, onDelete}) {
                     <Card.Title className="itemName">{item.name}</Card.Title>
 
                     <p className="text-muted colorStyling">{item.color}</p>
-                    <b className="priceStyling">$ {item.price}</b>
-                    <Form>
-                        <Form.Group className="dropdownStyling" controlId="exampleForm.SelectCustomSizeLg">
-                            <Form.Control as="select" size="md">
-                                <option>{item.quantity}</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </Form.Control>
-                        </Form.Group>
-                    </Form>
+                    <b className="priceStyling" onSelection={onSelection}>{total.toFixed(2)}</b>
+                    <CartQuantity item={item}/>
                 </Card.Body>
             </Card>
             <hr/>

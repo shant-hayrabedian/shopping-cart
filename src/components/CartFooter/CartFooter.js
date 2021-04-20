@@ -8,7 +8,8 @@ function CartFooter({items}) {
         <div>
             <p className="subTotalStyling">Subtotal:</p>
             <p className="subTotalPriceStyling">
-                $ {priceResult}
+                 {priceResult}
+
             </p>
             <Button className="CartFooterButton" variant="info" size="lg">Checkout</Button>
         </div>
