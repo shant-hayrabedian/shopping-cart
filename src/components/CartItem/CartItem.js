@@ -4,14 +4,6 @@ import {RiDeleteBin7Fill} from 'react-icons/ri';
 import CartQuantity from "../CartQuantity/CartQuantity";
 
 function CartItem({item, onDelete, onSelection}) {
-    // const [state, setState] = useState([]);
-    // onChange = (index, val) => {
-    //     setState({
-    //         products: state.products.map((product, i) => (
-    //             i === index ? {...product, count: val} : product
-    //         ))
-    //     })
-    // }
     // function converted() {
     //
     // }

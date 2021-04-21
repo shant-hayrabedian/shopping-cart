@@ -6,14 +6,14 @@ import './Cart.css';
 import Spinner from 'react-bootstrap/Spinner';
 
 function Cart() {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(null);
 
     async function fetchData() {
         const res = await fetch('././MOCK_DATA.json');
         res.json()
             .then(res => setTimeout(() => {
                 setItems(res);
-            }, 100));
+            }, 2000));
     }
 
     useEffect(() => {
@@ -27,21 +27,21 @@ function Cart() {
         setItems(delItem);
     }
 
-    const onSelection = (event, name) => {
-        // let total;
-        const changedData = items.map((item) => {
-            if (item.name === name) {
-                item.quantity = event.target.value
-            }
-            const convertedPrice = Number(item.price.split('$').join(''))
-            let total = 0;
-            total += item.quantity * convertedPrice;
-            console.log(total);
-        });
-        setItems(changedData)
-    }
+    // const onSelection = (event, name) => {
+    //     // let total;
+    //     const changedData = items.map((item) => {
+    //         if (item.name === name) {
+    //             item.quantity = event.target.value
+    //         }
+    //         const convertedPrice = Number(item.price.split('$').join(''))
+    //         let total = 0;
+    //         total += item.quantity * convertedPrice;
+    //         console.log(total);
+    //     });
+    //     setItems(changedData)
+    // }
 
-    if (items === 0) {
+    if (items === null) {
         return <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
         </Spinner>;
@@ -58,7 +58,7 @@ function Cart() {
                 <CartItemList
                     items={items}
                     onDelete={onDelete}
-                    onSelection={onSelection}/>
+                   />
                 <CartFooter items={items}/>
             </div>
         </div>
