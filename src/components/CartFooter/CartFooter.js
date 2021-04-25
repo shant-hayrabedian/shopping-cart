@@ -1,7 +1,7 @@
 import './CartFooter.css';
 import Button from 'react-bootstrap/Button';
 
-function CartFooter({items}) {
+const CartFooter = ({items}) => {
     const priceResult = () =>
         items.reduce((total, currentValue) => {
             let s = Number(currentValue.price.split('$').join(''));

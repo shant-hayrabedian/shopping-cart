@@ -2,7 +2,7 @@ import './CartHeader.css';
 import {AiOutlineClose} from 'react-icons/ai';
 
 
-function CartHeader() {
+const CartHeader = () => {
     return (
         <div>
             <span className="CartHeaderText">Your Cart</span><AiOutlineClose className="IconColor"/>

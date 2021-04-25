@@ -2,12 +2,12 @@ import CartItem from "../CartItem/CartItem";
 import './CartItemList.css';
 
 
-function CartItemList({items, onDelete, onSelection}) {
+const CartItemList = ({items, onDelete}) => {
     return (
         <div className="listStyling">
             {items.map((item) => {
                 return (
-                    <CartItem key={item.id} item={item} onDelete={onDelete} onSelection={onSelection}/>
+                    <CartItem key={item.id} item={item} onDelete={onDelete} />
                 )
             })}
         </div>

@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import {RiDeleteBin7Fill} from 'react-icons/ri';
 import CartQuantity from "../CartQuantity/CartQuantity";
 
-function CartItem({item, onDelete}) {
+const CartItem = ({item, onDelete}) => {
 
     return (
         <div>
@@ -14,7 +14,6 @@ function CartItem({item, onDelete}) {
                         onDelete(item.id);
                     }}/>
                     <Card.Title className="itemName">{item.name}</Card.Title>
-
                     <p className="text-muted colorStyling">{item.color}</p>
                     <CartQuantity item={item}/>
                 </Card.Body>

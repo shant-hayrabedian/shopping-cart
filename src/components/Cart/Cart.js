@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 import './Cart.css';
 import Spinner from 'react-bootstrap/Spinner';
 
-function Cart() {
+const Cart = () => {
     const [items, setItems] = useState(null);
 
     async function fetchData() {

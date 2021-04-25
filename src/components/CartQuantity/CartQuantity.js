@@ -1,7 +1,7 @@
 import {useState} from "react";
 import './CartQuantity.css';
 
-function CartQuantity({item}) {
+const CartQuantity = ({item}) => {
     const [quantity, setQuantity] = useState({
         count: item.quantity
     });
@@ -14,11 +14,9 @@ function CartQuantity({item}) {
         }
     };
     const handleChange = (e) => {
-        const value = e.target.value;
         setQuantity({count: e.target.value});
     };
-    const convertedPrice = Number(item.price.split('$').join(''))
-    let total = quantity.count * convertedPrice
+    const total = quantity.count * Number(item.price.split('$').join(''));
 
     return (
         <div>
