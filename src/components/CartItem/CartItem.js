@@ -3,14 +3,7 @@ import Card from 'react-bootstrap/Card';
 import {RiDeleteBin7Fill} from 'react-icons/ri';
 import CartQuantity from "../CartQuantity/CartQuantity";
 
-function CartItem({item, onDelete, onSelection}) {
-    // function converted() {
-    //
-    // }
-    const convertedPrice = Number(item.price.split('$').join(''))
-    let total = 0;
-    total += item.quantity * convertedPrice
-    // return total.toFixed(2);
+function CartItem({item, onDelete}) {
 
     return (
         <div>
@@ -23,7 +16,6 @@ function CartItem({item, onDelete, onSelection}) {
                     <Card.Title className="itemName">{item.name}</Card.Title>
 
                     <p className="text-muted colorStyling">{item.color}</p>
-                    <b className="priceStyling" onSelection={onSelection}>{total.toFixed(2)}</b>
                     <CartQuantity item={item}/>
                 </Card.Body>
             </Card>

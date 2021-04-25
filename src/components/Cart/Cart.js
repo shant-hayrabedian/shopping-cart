@@ -13,7 +13,7 @@ function Cart() {
         res.json()
             .then(res => setTimeout(() => {
                 setItems(res);
-            }, 2000));
+            }, 100));
     }
 
     useEffect(() => {

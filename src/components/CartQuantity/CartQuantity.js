@@ -6,6 +6,7 @@ function CartQuantity({item}) {
         count: item.quantity
     });
 
+
     const changeButtonsValues = (e) => {
         if (quantity.count <= 1) {
         } else {
@@ -13,20 +14,27 @@ function CartQuantity({item}) {
         }
     };
     const handleChange = (e) => {
-        setQuantity({count: e.target.value || 1});
+        const value = e.target.value;
+        setQuantity({count: e.target.value});
     };
+    const convertedPrice = Number(item.price.split('$').join(''))
+    let total = quantity.count * convertedPrice
 
     return (
-        <div className="dropdownStyling">
-            <button className="valueButton" onClick={(e) => changeButtonsValues(e)}>
-                -
-            </button>
-            <input type="number" className="quantityInputValue" name="quantity" value={quantity.count}
-                   onChange={handleChange}/>
+        <div>
+            <div className="dropdownStyling">
+                <button className="valueButton" onClick={(e) => changeButtonsValues(e)}>
+                    -
+                </button>
+                <input type="number" className="quantityInputValue" name="quantity" value={quantity.count}
+                       onChange={handleChange}/>
 
-            <button className="valueButton" onClick={() => setQuantity({count: quantity.count + 1})}>
-                +
-            </button>
+                <button className="valueButton" onClick={() => setQuantity({count: quantity.count + 1})}>
+                    +
+                </button>
+
+            </div>
+            <b className="priceStyling">${total.toFixed(2)}</b>
         </div>
     )
 }
