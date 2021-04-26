@@ -8,6 +8,9 @@ const CartItem = ({item, onDelete}) => {
     return (
         <div>
             <Card style={{width: '30rem', border: '0px', display: 'flex'}}>
+                {!item.image && (
+                    <Card.Img src='/assets/default-thumbnail.jpg' className="noImages"/>
+                )}
                 <Card.Img src={item.image} className="itemImages"/>
                 <Card.Body>
                     <RiDeleteBin7Fill className="IconColor1" onClick={() => {
